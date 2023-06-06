@@ -17,3 +17,10 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::prefix('pasiens')->group(function () {
+    Route::get('/', 'PasienController@index'); // menampilkan semua data
+    Route::post('/add', 'PasienController@store');     // menambah data
+    Route::get('/{id}', 'PasienController@show');   // menampilkan data sesuai id
+    Route::put('/{id}', 'PasienController@update'); // mengubah data sesuai id
+})->middleware('api')->domain('localhost:8000');
