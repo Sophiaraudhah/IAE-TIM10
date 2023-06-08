@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Pasien extends Model
+class Pasiens extends Model
 {
     use HasFactory;
 
@@ -22,5 +22,5 @@ class Pasien extends Model
 
     public $incrementing = true; //auto increment agar tidak double
 
-    protected $table = 'db_pasiens'; 
+    protected $table = 'pasiens'; 
 }
