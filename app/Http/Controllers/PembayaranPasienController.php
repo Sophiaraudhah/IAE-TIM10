@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\PembayaranPasien;
 use Illuminate\Http\Request;
 
-//Menampilkan semua data pembayaran pembayaranpa$pembayaranpasien yang tersedia
-//Menampilkan data pembayaran pembayaranpa$pembayaranpasien per id pembayaranpa$pembayaranpasien
+//Menampilkan semua data pembayaran pembayaranpa$pembayaranpasien yang tersedia= sudah
+//Menampilkan data pembayaran pembayaran pasien per id= sudah
 
 class PembayaranPasienController extends Controller
 {

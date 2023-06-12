@@ -7,8 +7,8 @@ use App\Models\Pasiens;
 
 //menampilkan semua data= sudah
 //menampilkan data pasien sesuai id= sudah
-//menambah data pasien baru= masih error
-//meng-update data pasien= masih error
+//menambah data pasien baru= sudah
+//meng-update data pasien= sudah
 
 class PasienController extends Controller
 {
@@ -52,7 +52,7 @@ class PasienController extends Controller
         ], 200);
     }
 
-    public function update(Request $request, $id_pasien)
+    public function update(Request $request, $id_pasien) // meng-update data pasien berdasarkan id
     {
         $data = $request->validate([
             'id_pasien' => 'required',
