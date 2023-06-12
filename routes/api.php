@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PasienController;
+use App\Http\Controllers\PembayaranPasienController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 /*
@@ -26,3 +27,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 // })->middleware('api')->domain('localhost:8000');
 
 Route::apiResource('pasien', PasienController::class);
+Route::apiResource('pembayaran', PembayaranPasienController::class);

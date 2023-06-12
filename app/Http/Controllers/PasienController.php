@@ -12,7 +12,7 @@ use App\Models\Pasiens;
 
 class PasienController extends Controller
 {
-    public function index() //menampilkan semua data
+    public function index() //menampilkan semua data pasien
     {
         $pasiens = Pasiens::all();
         return response()->json([
@@ -20,58 +20,6 @@ class PasienController extends Controller
             'data' => $pasiens
         ], 200);
     }
-
-    // public function store(Request $request) // menambah data
-    // {
-    //     $data = $request->validate([
-    //         // 'id_pasien' => 'required',
-    //         // 'nama_pasien' => 'required',
-    //         // 'jenis_kelamin' => 'required',
-    //         // 'waktu_masuk' => 'required',
-    //         'id_pasien' => $request->id_pasien,
-    //         'nama_pasien' => $request->nama_pasien,
-    //         'jenis_kelamin' => $request->jenis_kelamin,
-    //         'waktu_masuk' => $request->waktu_masuk,
-    //     ]);
-
-    //     $pasien = Pasien::create($data);
-    //     return response()->json([
-    //         'message' => 'Data pasien berhasil disimpan',
-    //         'data' => $pasien
-    //     ], 201);
-    // }
-    public function store(Request $request)
-    {
-        //
-        $data = Pasiens::create([
-            'id_pasien' => $request->id_pasien,
-            'nama_pasien' => $request->nama_pasien,
-            'jenis_kelamin' => $request->jenis_kelamin,
-            'waktu_masuk' => $request->waktu_masuk,
-        ]);
-        return response()->json([
-            'message' => 'Data pasien berhasil disimpan',
-            'data' => $pasien
-        ], 201);
-    }
-
-    // public function store(Request $request) // menambah pasie baru
-    // {
-    //     $data = $request->validate([
-    //         'id_pasien' => 'required',
-    //         'nama_pasien' => 'required',
-    //         'jenis_kelamin' => 'required',
-    //         'waktu_masuk' => 'required',
-    //     ]);
-    
-    //     $pasien = Pasiens::create($data);
-    
-    //     return response()->json([
-    //         'message' => 'Data pasien berhasil disimpan',
-    //         'data' => $pasien
-    //     ], 201);
-    // }
-    
 
     public function show($id_pasien) // menampilkan pasien sesuai id
     {
@@ -89,28 +37,44 @@ class PasienController extends Controller
         ], 200);
     }
 
-    // public function update(Request $request, $id) // mengubah data sesuai id
-    // {
-    //     $data = $request->validate([
-    //         'id_pasien' => 'required',
-    //         'nama_pasien' => 'required',
-    //         'jenis_kelamin' => 'required',
-    //         'waktu_masuk' => 'required',
-    //     ]);
+    public function store(Request $request) // menambah data pasien baru
+    {
+        //
+        $data = Pasiens::create([
+            'id_pasien' => $request->id_pasien,
+            'nama_pasien' => $request->nama_pasien,
+            'jenis_kelamin' => $request->jenis_kelamin,
+            'waktu_masuk' => $request->waktu_masuk,
+        ]);
+        return response()->json([
+            'message' => 'Data berhasil ditambahkan',
+            'data' => $data
+        ], 200);
+    }
 
-    //     $pasien = Pasien::find($id);
+    public function update(Request $request, $id_pasien)
+    {
+        $data = $request->validate([
+            'id_pasien' => 'required',
+            'nama_pasien' => 'required',
+            'jenis_kelamin' => 'required',
+            'waktu_masuk' => 'required',
+        ]);
 
-    //     if (!$pasien) {
-    //         return response()->json([
-    //             'message' => 'Data tidak ditemukan'
-    //         ], 404);
-    //     }
+        $pasien = Pasiens::find($id_pasien);
 
-    //     $pasien->update($data);
+        if (!$pasien) {
+            return response()->json([
+                'message' => 'Data tidak ditemukan'
+            ], 404);
+        }
 
-    //     return response()->json([
-    //         'message' => 'Data pasien berhasil diperbarui',
-    //         'data' => $pasien
-    //     ], 200);
-    // }
+        $pasien->update($data);
+
+        return response()->json([
+            'message' => 'Data pasien berhasil diperbarui',
+            'data' => $pasien
+        ], 200);
+    }
+
 }
