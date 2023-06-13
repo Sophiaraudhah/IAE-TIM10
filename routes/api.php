@@ -33,3 +33,13 @@ Route::put('KelolaPemObat/{id_permintaan}',[App\Http\Controllers\KelolaPemObatCo
 
 Route::apiResource('pasien', PasienController::class);
 Route::apiResource('pembayaran', PembayaranPasienController::class);
+
+Route::get('/ruang_operasi', [RuangOperasiController::class, 'index']);
+Route::post('/ruang_operasi', [RuangOperasiController::class, 'store']);
+Route::get('/ruang_operasi/{id}', [RuangOperasiController::class, 'show']);
+Route::put('/ruang_operasi/{id}', [RuangOperasiController::class, 'update']);
+Route::delete('/ruang_operasi/{id}', [RuangOperasiController::class, 'destroy']);
+
+Route::get('/pembayaran_obat', [PembayaranObatController::class, 'index']);
+Route::get('/pembayaran_obat/{id}', [PembayaranObatController::class, 'show']);
+Route::put('/pembayaran_obat/{id}', [PembayaranObatController::class, 'update']);
