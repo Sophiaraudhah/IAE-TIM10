@@ -41,7 +41,6 @@ class PasienController extends Controller
     {
         //
         $data = Pasiens::create([
-            'id_pasien' => $request->id_pasien,
             'nama_pasien' => $request->nama_pasien,
             'jenis_kelamin' => $request->jenis_kelamin,
             'waktu_masuk' => $request->waktu_masuk,

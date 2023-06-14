@@ -10,7 +10,6 @@ class Pasiens extends Model
     use HasFactory;
 
     protected $fillable = [
-        'id_pasien',
         'nama_pasien',
         'jenis_kelamin',
         'waktu_masuk',
