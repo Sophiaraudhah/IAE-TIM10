@@ -4,6 +4,8 @@ use App\Http\Controllers\PasienController;
 use App\Http\Controllers\PembayaranPasienController;
 use App\Http\Controllers\api\PermintaanObatController;
 use App\Http\Controllers\api\KelolaPemObatController;
+use App\Http\Controllers\PembayaranObatController;
+use App\Http\Controllers\RuangOperasiController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 /*
