@@ -17,7 +17,7 @@ class PembayaranObatController extends Controller
     public function index()
     {
         $client = new Client();
-        $response = $client -> get('http://127.0.0.1:8000/api/poliklinik/resep');
+        $response = $client -> get('http://127.0.0.1:8001/api/poliklinik/resep');
         $body = $response -> getBody() -> getContents();
         $data = json_decode($body, true);
         $data = $data['response'];

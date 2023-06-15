@@ -17,13 +17,13 @@ class SeederPasiens extends Seeder
                 'id_pasien'=>1,
                 'nama_pasien'=>'pia',
                 'jenis_kelamin'=>'Wanita',
-                'waktu_masuk'=>'13:28:56',
+                'waktu_masuk'=>'14-06-2023',
             ],
             [
                 'id_pasien'=>2,
                 'nama_pasien'=>'pey',
                 'jenis_kelamin'=>'Pria',
-                'waktu_masuk'=>'13:28:46',
+                'waktu_masuk'=>'15-06-2023',
             ],
         ]);
     }
